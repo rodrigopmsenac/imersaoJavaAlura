@@ -5,6 +5,7 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 public class App {
 
@@ -16,8 +17,21 @@ public class App {
         */
 
         //Criar conexão http e buscar dados da API
+        Scanner ler = new Scanner(System.in);
+        String escolha;
+        String url;
+        System.out.println("Escolha uma opção:");
+        System.out.println("1 - TOP 10 Melhores Filmes");
+        System.out.println("2 - TOP 3 Filmes mais Populares");
+        System.out.println("Digite o número escolhido:");
+        escolha = Integer.toString(ler.nextInt());
 
-        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        //String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        
+        if(escolha.equals("1")){
+            url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        }else url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularMovies.json";
+
         URI endereco = URI.create(url);
         HttpClient cliente = HttpClient.newHttpClient();
         HttpRequest requisicao = HttpRequest.newBuilder(endereco).GET().build();
