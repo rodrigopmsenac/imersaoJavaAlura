@@ -50,13 +50,13 @@ public class App {
         //Extrair dados desejado (top filmes: Titulo, Poster-Capa, Classificação-Ranking)
         //titulo completo
         for (Map<String,String> filme : listaDeFilmes) {
-            System.out.println("Titulo");
+            System.out.println("\u001b[34m \u001b[40m Titulo \u001b[m");
             System.out.println(filme.get("fullTitle"));
             System.out.println();
-            System.out.println("Capa");
+            System.out.println("\u001b[31m \u001b[46m Capa \u001b[m");
             System.out.println(filme.get("image"));
             System.out.println();
-            System.out.println("Ranking");
+            System.out.println("\u001b[33m \u001b[47m Ranking \u001b[m");
             System.out.println(filme.get("imDbRating"));
             System.out.println();                   
         }
